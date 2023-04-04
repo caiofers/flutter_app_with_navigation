@@ -2,7 +2,11 @@ import 'package:app_with_navigation/secondary_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(MaterialApp(
+    home: MyApp(),
+    initialRoute: "/",
+    routes: {"/secondaryScreen": (context) => SecondaryScreen("Olá")},
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,11 +19,12 @@ class MyApp extends StatelessWidget {
       body: ElevatedButton(
         child: const Text("Go to Secondary Screen"),
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      SecondaryScreen("Oi, meu nome é Caio")));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //         builder: (context) =>
+          //             SecondaryScreen("Oi, meu nome é Caio")));
+          Navigator.pushNamed(context, "/secondaryScreen");
         },
       ),
     );
