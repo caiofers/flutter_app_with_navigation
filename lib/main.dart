@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
       body: ElevatedButton(
         child: const Text("Go to Secondary Screen"),
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SecondaryScreen()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      SecondaryScreen("Oi, meu nome é Caio")));
         },
       ),
     );
